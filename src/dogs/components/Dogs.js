@@ -58,7 +58,17 @@ class Dogs extends Component {
       return <p>Loading...</p>
     }
     if (dogs.length === 0) {
-      return <p>No dogs to display</p>
+      return (
+        <Layout
+          md={8}
+          lg={6}
+        >
+          <h3>
+            Dogs {user && <Button href="#create-dog">Add a Dog</Button>}
+          </h3>
+          <p>No dogs to display</p>
+        </Layout>
+      )
     }
 
     if (error) {
