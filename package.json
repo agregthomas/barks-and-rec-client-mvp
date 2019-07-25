@@ -1,6 +1,6 @@
 {
-  "name": "react-auth-material-ui-template",
-  "homepage": "https://<USERNAME>.github.io/<REPO NAME>",
+  "name": "barks-and-rec-client-mvp",
+  "homepage": "https://agregthomas.github.io/barks-and-rec-client-mvp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
