@@ -9,6 +9,11 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 
+import Dogs from './dogs/components/Dogs'
+import Dog from './dogs/components/Dog'
+import DogEdit from './dogs/components/DogEdit'
+import DogCreate from './dogs/components/DogCreate'
+
 import { SnackbarProvider } from 'notistack'
 
 class App extends Component {
@@ -28,7 +33,10 @@ class App extends Component {
     const { user } = this.state
 
     return (
-      <SnackbarProvider maxSnack={3}>
+      <SnackbarProvider
+        maxSnack={3}
+        autoHideDuration={1500}
+      >
         <Header user={user} />
         <main className="container">
           <Route path='/sign-up' render={() => (
@@ -43,6 +51,18 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
+          <AuthenticatedRoute user={user} exact path='/dogs' render={() => (
+            <Dogs user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/dogs/:id' render={
+            () => (<Dog user={user} />)
+          } />
+          <AuthenticatedRoute user={user} exact path='/dogs/:id/edit' render={
+            () => (<DogEdit user={user} />)
+          } />
+          <AuthenticatedRoute user={user} exact path='/create-dog' render={
+            () => (<DogCreate user={user} />)
+          } />
         </main>
       </SnackbarProvider>
     )
