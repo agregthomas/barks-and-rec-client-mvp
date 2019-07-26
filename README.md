@@ -61,6 +61,9 @@
   * As a signed in user, I can change the name and breed of a dog.
   * As a signed in user, I can remove dogs I have created.
 
+Application
+---
+![application](./photos/application.png)
 
   Wireframe
   ---
